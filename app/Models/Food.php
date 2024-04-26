@@ -10,8 +10,5 @@ class Food extends Model
     use HasFactory;
 
     protected $table='foodorders';
-    protected $fillable = [
-        'date',
-        'food_timing'
-    ];
+    protected $fillable = [ 'date', 'food_timing' ];
 }

@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Food;
 
-
 class FoodController extends Controller
 {
     public function place(Request $request)
@@ -17,7 +16,6 @@ class FoodController extends Controller
             $order->food_timing = implode(', ',$request->schedule);
             $order->save();
             return ['status'=>true, 'output'=> $order, 'message'=>'Order Placed!'];
-            //code...
         } catch (\Throwable $th) {
             return ['status'=>false, 'message'=> $th->getMessage(),'trace'=>$th->getTrace() ];
         }

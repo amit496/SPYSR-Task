@@ -63,16 +63,6 @@ Route::group(['prefix' => ''], function () {
     Route::put('blogs/trashed/revert/{id}', [BlogsController::class, 'revertFromTrash'])->name('blogs.trashed.revert');
 });
 
-// food order
-Route::group(['prefix' => 'orders', 'as'=>'order.'], function(){
-
-    Route::get('/', function(){
-        return view('backend.pages.food.orders');
-    })->name('index');
-
-    Route:: post('/place', [FoodController::class,'place'])->name('place');
-    Route:: get('/get-event-data', [FoodController::class,'getEventData'])->name('getData');
-});
 /**
  * Contact Routes
  */
@@ -89,7 +79,15 @@ Route::group(['prefix' => 'settings'], function () {
     Route::resource('languages', LanguagesController::class);
 });
 
+// food order
+Route::group(['prefix' => 'orders', 'as'=>'order.'], function(){
+    Route::get('/', function(){
+        return view('backend.pages.food.orders');
+    })->name('index');
 
+    Route:: post('/place', [FoodController::class,'place'])->name('place');
+    Route:: get('/get-event-data', [FoodController::class,'getEventData'])->name('getData');
+});
 
 
 

@@ -56,7 +56,6 @@
                 </div>
             </form>
         </div>
-
     </div>
 @endsection
 
@@ -92,7 +91,6 @@
             customButtons: {},
             dateClick(info)
             {
-                // alert(info.dateStr)
                 if($(`td[data-date=${info.dateStr}]`).find('.fc-daygrid-event-harness').length){
                     console.log('nahi jaane doonga')
                     return false
@@ -156,7 +154,6 @@
                     eventData.push(order)
                     // window.location.reload()
                     $('.close').click()
-                    // $('.modal').removeClass('show');
                     $(window).scrollTop(0);
                     getData(eventData)
                     $('#order')[0].reset()
